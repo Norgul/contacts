@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('favourite', 'FavouriteContactController@index')->name('favourite.index');
+Route::get('favourite/{contact}', 'FavouriteContactController@update')->name('favourite.update');
+
+Route::resource('contact', 'ContactController');
+Route::resource('favourite', 'FavouriteContactController');
+Route::resource('phone', 'PhoneController');
+
